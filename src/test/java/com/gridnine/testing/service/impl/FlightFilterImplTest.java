@@ -30,12 +30,12 @@ class FlightFilterImplTest {
     }
 
     @Test
-    void getListFlights() {
+    void getListFlightsTest() {
         assertThat(out.getListFlights()).isEqualTo(allFlights).hasSize(allFlights.size());
     }
 
     @Test
-    void excludeWhenDepartureBeforeNow() {
+    void excludeWhenDepartureBeforeNowTest() {
         int initialSize = out.getListFlights().size();
 
         List<Flight> actual = out.excludeWhenDepartureBeforeNow().getListFlights();
@@ -45,7 +45,7 @@ class FlightFilterImplTest {
     }
 
     @Test
-    void excludeWhenArrivalBeforeDeparture() {
+    void excludeWhenArrivalBeforeDepartureTest() {
         int initialSize = out.getListFlights().size();
 
         List<Flight> actual = out.excludeWhenArrivalBeforeDeparture().getListFlights();
@@ -55,7 +55,7 @@ class FlightFilterImplTest {
     }
 
     @Test
-    void excludeWhenTotalGroundTimeMoreThanTwoHours() {
+    void excludeWhenTotalGroundTimeMoreThanTwoHoursTest() {
         int initialSize = out.getListFlights().size();
 
         List<Flight> actual = out.excludeWhenTotalGroundTimeMoreThanTwoHours().getListFlights();
@@ -66,7 +66,7 @@ class FlightFilterImplTest {
     }
 
     @Test
-    void allFilters() {
+    void allFiltersTest() {
         int initialSize = out.getListFlights().size();
 
         List<Flight> actual = out
